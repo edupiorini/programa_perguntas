@@ -3,9 +3,16 @@ import 'package:flutter/material.dart';
 
 main(List<String> args) => runApp(new PerguntaApp());
 
-class PerguntaApp extends StatelessWidget {
+class PerguntaAppState extends State<PerguntaApp> {
+  //classe para gerenciar estado
+  var questionSelected = 0;
+
   void answer() {
-    print('Question answered');
+    setState(() {
+      questionSelected++;
+    });
+
+    print(questionSelected);
   }
 
   @override
@@ -21,12 +28,18 @@ class PerguntaApp extends StatelessWidget {
           ),
           body: Column(
             children: [
-              Text(questions[0]),
+              Text(questions[questionSelected]),
               ElevatedButton(onPressed: answer, child: Text('Response 1')),
               ElevatedButton(onPressed: answer, child: Text('Response 2')),
               ElevatedButton(onPressed: answer, child: Text('Response 3'))
             ],
           )),
     );
+  }
+}
+
+class PerguntaApp extends StatefulWidget {
+  PerguntaAppState createState() {
+    return PerguntaAppState();
   }
 }
