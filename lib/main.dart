@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import './questao.dart';
-import 'respostas.dart';
+import 'resposta.dart';
 
 main(List<String> args) => runApp(new PerguntaApp());
 
@@ -36,9 +36,9 @@ class _PerguntaAppState extends State<PerguntaApp> {
           body: Column(
             children: [
               Questao(questions[_questionSelected]),
-              ElevatedButton(onPressed: null, child: Respostas('Response 1')),
-              ElevatedButton(onPressed: null, child: Respostas('Response 2')),
-              ElevatedButton(onPressed: null, child: Respostas('Response 3'))
+              ElevatedButton(onPressed: null, child: Resposta('Response 1')),
+              ElevatedButton(onPressed: null, child: Resposta('Response 2')),
+              ElevatedButton(onPressed: null, child: Resposta('Response 3'))
             ],
           )),
     );

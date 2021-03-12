@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Respostas extends StatelessWidget {
+class Resposta extends StatelessWidget {
   final _text;
 
-  Respostas(this._text);
+  Resposta(this._text);
 
   @override
   Widget build(BuildContext context) {
