@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Resposta extends StatelessWidget {
-  final _text;
+  final String _text;
 
   Resposta(this._text);
 
@@ -10,6 +10,10 @@ class Resposta extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         margin: EdgeInsets.all(5),
-        child: Text(_text, style: TextStyle(fontSize: 15)));
+        child: ElevatedButton(
+          child: Text(_text, style: TextStyle(fontSize: 15)),
+          onPressed: null,
+        )
+    );
   }
 }

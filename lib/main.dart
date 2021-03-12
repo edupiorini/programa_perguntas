@@ -36,9 +36,9 @@ class _PerguntaAppState extends State<PerguntaApp> {
           body: Column(
             children: [
               Questao(questions[_questionSelected]),
-              ElevatedButton(onPressed: null, child: Resposta('Response 1')),
-              ElevatedButton(onPressed: null, child: Resposta('Response 2')),
-              ElevatedButton(onPressed: null, child: Resposta('Response 3'))
+              Resposta('Resposta 1'),
+              Resposta('Resposta 2'),
+              Resposta('Resposta 3'),
             ],
           )),
     );
