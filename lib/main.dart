@@ -10,24 +10,36 @@ class _PerguntaAppState extends State<PerguntaApp> {
   //classe para gerenciar estado
   var _questionSelected = 0;
 
-  /**
-   * void _answer() {
-
-      setState(() {
+  _answer() {
+    setState(() {
       _questionSelected++;
-      });
+    });
 
-      print(_questionSelected);
-      }
-   */
-
+    print(_questionSelected);
+  }
 
   @override
   Widget build(BuildContext context) {
-    final List<String> questions = [
-      'Which is your favorite color?',
-      'Which is your favorite animal?',
+    final List<Map<String, Object>> questions = [
+      {
+        'text': 'Which is your favorite color?',
+        'answer': ['Red', 'Green', 'Blue', 'Gray']
+      },
+      {
+        'text': 'Which is your favorite animal?',
+        'answer': ['Dog', 'Cat', 'Bird', 'Fish']
+      },
+      {
+        'text': 'Which is your favorite teacher?',
+        'answer': ['Eduardo', 'Laura', 'Paulo', 'Andreia']
+      }
     ];
+    List<Widget> responses = [];
+
+    for(String textResponse in questions[_questionSelected]['answer']) {
+      responses.add(Resposta(textResponse, _answer));
+    }
+
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
@@ -35,10 +47,8 @@ class _PerguntaAppState extends State<PerguntaApp> {
           ),
           body: Column(
             children: [
-              Questao(questions[_questionSelected]),
-              Resposta('Resposta 1'),
-              Resposta('Resposta 2'),
-              Resposta('Resposta 3'),
+              Questao(questions[_questionSelected]['text']),
+              ...responses,
             ],
           )),
     );
