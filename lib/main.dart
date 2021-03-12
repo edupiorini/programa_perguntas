@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import './questao.dart';
+import 'respostas.dart';
 
 main(List<String> args) => runApp(new PerguntaApp());
 
@@ -9,13 +10,17 @@ class _PerguntaAppState extends State<PerguntaApp> {
   //classe para gerenciar estado
   var _questionSelected = 0;
 
-  void _answer() {
-    setState(() {
-      _questionSelected++;
-    });
+  /**
+   * void _answer() {
 
-    print(_questionSelected);
-  }
+      setState(() {
+      _questionSelected++;
+      });
+
+      print(_questionSelected);
+      }
+   */
+
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +36,9 @@ class _PerguntaAppState extends State<PerguntaApp> {
           body: Column(
             children: [
               Questao(questions[_questionSelected]),
-              ElevatedButton(onPressed: _answer, child: Text('Response 1')),
-              ElevatedButton(onPressed: _answer, child: Text('Response 2')),
-              ElevatedButton(onPressed: _answer, child: Text('Response 3'))
+              ElevatedButton(onPressed: null, child: Respostas('Response 1')),
+              ElevatedButton(onPressed: null, child: Respostas('Response 2')),
+              ElevatedButton(onPressed: null, child: Respostas('Response 3'))
             ],
           )),
     );
