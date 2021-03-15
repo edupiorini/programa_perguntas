@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:programa_perguntas/resultado.dart';
 
 import './questao.dart';
 import 'resposta.dart';
@@ -57,9 +58,7 @@ class _PerguntaAppState extends State<PerguntaApp> {
                         .toList(),
                   ],
                 )
-              : Center(
-                  child: Text('Congratulations!',
-                      style: TextStyle(fontSize: 28)))),
+              : Resultado('Congratulations!')),
     );
   }
 }

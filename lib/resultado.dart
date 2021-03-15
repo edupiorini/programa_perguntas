@@ -11,7 +11,7 @@ class Resultado extends StatelessWidget {
     return Center(
       child: Text(
         _mensagem,
-        style: TextStyle(fontSize: 28),
+        style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
       ),
     );
   }
