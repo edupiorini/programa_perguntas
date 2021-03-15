@@ -8,8 +8,8 @@ main(List<String> args) => runApp(new PerguntaApp());
 
 class _PerguntaAppState extends State<PerguntaApp> {
   //classe para gerenciar estado
-  var _questionSelected = 0;
-  final List<Map<String, Object>> _questions = const [
+  var _perguntasSelecionadas = 0;
+  final List<Map<String, Object>> _perguntas = const [
     {
       'text': 'Which is your favorite color?',
       'answer': ['Red', 'Green', 'Blue', 'Gray']
@@ -24,23 +24,23 @@ class _PerguntaAppState extends State<PerguntaApp> {
     }
   ];
 
-  _answer() {
-    if (isThereSelectedQuestion) {
+  _responder() {
+    if (temPerguntaSelecionada) {
       setState(() {
-        _questionSelected++;
+        _perguntasSelecionadas++;
       });
     }
   }
 
-  bool get isThereSelectedQuestion {
-    final _condition = _questionSelected < _questions.length;
+  bool get temPerguntaSelecionada {
+    final _condition = _perguntasSelecionadas < _perguntas.length;
     return _condition;
   }
 
   @override
   Widget build(BuildContext context) {
-    List<String> responses = isThereSelectedQuestion
-        ? _questions[_questionSelected]['answer']
+    List<String> respostas = temPerguntaSelecionada
+        ? _perguntas[_perguntasSelecionadas]['answer']
         : null;
 
     return MaterialApp(
@@ -48,12 +48,12 @@ class _PerguntaAppState extends State<PerguntaApp> {
           appBar: AppBar(
             title: Text('Questions'),
           ),
-          body: isThereSelectedQuestion
+          body: temPerguntaSelecionada
               ? Column(
                   children: [
-                    Questao(_questions[_questionSelected]['text']),
-                    ...responses
-                        .map((text) => Resposta(text, _answer))
+                    Questao(_perguntas[_perguntasSelecionadas]['text']),
+                    ...respostas
+                        .map((text) => Resposta(text, _responder))
                         .toList(),
                   ],
                 )
