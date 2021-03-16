@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class Resultado extends StatelessWidget {
   final String _mensagem;
 
-  const Resultado(this._mensagem);
+   Resultado(this._mensagem);
 
   @override
   Widget build(BuildContext context) {
