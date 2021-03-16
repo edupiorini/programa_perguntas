@@ -10,16 +10,31 @@ class _PerguntaAppState extends State<PerguntaApp> {
   var _perguntasSelecionadas = 0;
   final List<Map<String, Object>> _perguntas = const [
     {
-      'text': 'Which is your favorite color?',
-      'answer': ['Red', 'Green', 'Blue', 'Gray']
+      'texto': 'Which is your favorite color?',
+      'answer': [
+        {'texto': 'Red', 'nota': 10},
+        {'texto': 'Green', 'nota': 5},
+        {'texto': 'Blue', 'nota': 3},
+        {'texto': 'Gray', 'nota': 1},
+      ]
     },
     {
-      'text': 'Which is your favorite animal?',
-      'answer': ['Dog', 'Cat', 'Bird', 'Fish']
+      'texto': 'Which is your favorite animal?',
+      'answer': [
+        {'texto': 'Dog', 'nota': 5},
+        {'texto': 'Cat', 'nota': 3},
+        {'texto': 'Bird', 'nota': 1},
+        {'texto': 'Fish', 'nota': 8},
+      ]
     },
     {
-      'text': 'Which is your favorite teacher?',
-      'answer': ['Eduardo', 'Laura', 'Paulo', 'Andreia']
+      'texto': 'Which is your favorite teacher?',
+      'answer': [
+        {'texto': 'Eduardo', 'nota': 10},
+        {'texto': 'Laura', 'nota': 8},
+        {'texto': 'Paulo', 'nota': 6},
+        {'texto': 'Andreia', 'nota': 7},
+      ]
     }
   ];
 
