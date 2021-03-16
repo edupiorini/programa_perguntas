@@ -8,6 +8,8 @@ main(List<String> args) => runApp(new PerguntaApp());
 class _PerguntaAppState extends State<PerguntaApp> {
   //classe para gerenciar estado
   var _perguntasSelecionadas = 0;
+  var _pontuacaoTotal = 0;
+
   final List<Map<String, Object>> _perguntas = const [
     {
       'texto': 'Which is your favorite color?',
@@ -38,10 +40,13 @@ class _PerguntaAppState extends State<PerguntaApp> {
     }
   ];
 
-  _responder() {
-    setState(() {
-      _perguntasSelecionadas++;
-    });
+  _responder(int pontuacao) {
+    if (temPerguntaSelecionada) {
+      setState(() {
+        _perguntasSelecionadas++;
+        _pontuacaoTotal += pontuacao;
+      });
+    }
   }
 
   bool get temPerguntaSelecionada {
